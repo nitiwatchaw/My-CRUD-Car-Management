@@ -73,8 +73,8 @@ const Table = (props) => {
                 <td>
                   <div className="row-btn">
                     <button onClick={() => CarUpdate(val.id)} className='btn btn-warning'><FontAwesomeIcon icon={faPenToSquare} /></button>
-                    <button onClick={() => deleteCar(val.id)} className='btn btn-danger'><FontAwesomeIcon icon={faTrash} /></button>
                     <button onClick={() => CarRead(val.id)} className='btn btn-warning' ><FontAwesomeIcon icon={faEye} /></button>
+                    <button onClick={() => deleteCar(val.id)} className='btn btn-danger'><FontAwesomeIcon icon={faTrash} /></button>
                   </div>
                 </td>
               </tr>
