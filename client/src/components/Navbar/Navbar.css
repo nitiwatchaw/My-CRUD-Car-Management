@@ -1,0 +1,23 @@
+nav {
+    background-color: #141E46;
+    margin-bottom: 80px;
+    min-height: 90px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.active {
+    background-color: white !important;
+}
+
+
+@media (max-width:998px) {
+    nav {
+        gap: 20px;
+    }
+    nav .btn-wrap{
+       justify-content: flex-end;
+    }
+}
