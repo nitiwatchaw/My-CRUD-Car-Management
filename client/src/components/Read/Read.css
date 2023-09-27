@@ -76,3 +76,23 @@
     transform: rotate(20deg);
 
 }
+a{
+    text-decoration: none !important;
+}
+
+@media (max-width:998px) {
+    .data-wrap{
+        gap: 76px;
+    }
+    .sec1{
+        width: 130px;
+    }
+    .sec2{
+        width: 300px !important;
+    }
+}
+@media (max-width:576px){
+    p{
+        font-size: 20px !important;
+    }
+}

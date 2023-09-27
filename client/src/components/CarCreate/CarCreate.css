@@ -1,8 +1,4 @@
-nav {
-    background-color: #141E46;
-    margin-bottom: 80px;
-    min-height: 90px;
-}
+
 
 .wrapper-btn {
     justify-content: center;
@@ -10,11 +6,11 @@ nav {
 }
 
 .wrapper-btn button:first-child {
-    width: 100px;
+    width: 200px;
 }
 
 .wrapper-btn button:last-child {
-    width: 100px;
+    width: 200px;
 }
 
 .form-label {
@@ -32,6 +28,7 @@ nav {
     -webkit-backdrop-filter: blur(4.4px);
     border: 1px solid rgba(255, 255, 255, 0.74);
 }
+
 .bg-container2 {
     background-image: url(../../assets/car.jpg);
     width: 100%;
@@ -40,4 +37,19 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -10px;
+}
+
+@media (max-width:998px) {
+    .information {
+        width: 90% !important;
+    }
+}
+
+@media (max-width:576px) {
+
+    .information button {
+        width: 120px !important;
+    }
+
+
 }
