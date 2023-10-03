@@ -2,10 +2,24 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { DataBrand } from './DataBrand/DataBrand'
 import { DataYear } from "./DataBrand/DataYear"
-
+import { NavLink, useParams } from 'react-router-dom'
 const Formdata = ({ setBrand, setName, setYear, setCost }) => {
 
     const [Gen, setGen] = useState([])
+    const { id } = useParams()
+
+
+    const readDate = () => {
+        Axios.get("http://localhost:3002/read/" + id)
+            .then((res) => {
+                setReadData((res.data))
+            })
+    }
+
+    useEffect(() => {
+        readDate();
+    })
+
 
     const hangleChangeValue = (e) => {
         setBrand(e.target.value)
