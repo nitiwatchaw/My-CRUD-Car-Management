@@ -107,7 +107,6 @@ const Table = (props) => {
               {records.filter(val => val.brand.toLowerCase().includes(query)).map((val, index) => {
                 return (
                   <tr key={index} className=' fw-bold'>
-
                     <th scope="row">{val.id}</th>
                     <td>{val.brand}</td>
                     <td>{val.name}</td>

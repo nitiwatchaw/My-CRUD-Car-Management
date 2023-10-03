@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './Update.css'
-import { NavLink } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import Formdata from '../../formData/Formdata'
 const Update = () => {
     const { id } = useParams()
 
@@ -49,28 +49,7 @@ const Update = () => {
             </nav>
             <div className="informationUpdate" style={{ width: "60%", margin: "0 auto" }}>
                 <form action="" onSubmit={handleSubmit}>
-                    <div className='mb-3'>
-                        <label htmlFor="brand" className='form-label'>Change brand</label>
-                        <input type="text" className='form-control' required placeholder='Enter Brand' onChange={(e) => { setBrand(e.target.value) }} />
-                    </div>
-                    <div className='mb-3'>
-                        <label htmlFor="name" className='form-label'>Change name</label>
-                        <input type="text" className='form-control' required placeholder='Enter Name' onChange={(e) => { setName(e.target.value) }} />
-                    </div>
-                    <div className='mb-3'>
-                        <label htmlFor="year" className='form-label'>Change year</label>
-                        <input type="number" className='form-control' max="2023" required placeholder='Enter Year' onChange={(e) => { setYear(e.target.value) }} />
-                    </div>
-                    <div className='mb-3'>
-                        <label htmlFor="cost" className='form-label'>Change cost</label>
-                        <input type="number" className='form-control' required placeholder='Enter Cost' onChange={(e) => { setCost(e.target.value) }} />
-                    </div>
-                    <div className='mb-3 d-flex wrapper-btn' >
-                        <NavLink to="/">
-                            <button className='btn btn-danger'>Cancle</button>
-                        </NavLink>
-                        <button className='btn btn-info text-white' type='submit'>Update Car</button>
-                    </div>
+                    <Formdata setBrand={setBrand} setName={setName} setYear={setYear} setCost={setCost} />
                 </form>
             </div>
         </div>

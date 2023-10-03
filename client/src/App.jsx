@@ -83,13 +83,10 @@ function App() {
   return (
     <div >
       <Routes >
-
         <Route path="/" element={<Main item={item} setItem={setItem} id={id} deleteCar={deleteCar} />}> </Route>
         <Route path="/create" element={<CarCreate setBrand={setBrand} setName={setName} setYear={setYear} setCost={setCost} addCar={addCar} />}> </Route>
         <Route path="/update/:id" element={<Update id={id} />}> </Route>
         <Route path="/read/:id" element={<Read />}> </Route>
-
-
       </Routes>
 
     </div>

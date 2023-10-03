@@ -1,8 +1,8 @@
 import React from 'react'
 import './CarCreate.css'
-import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import Formdata from '../../formData/Formdata'
 
 const CarCreate = (props) => {
     const { setBrand, setName, setYear, setCost, addCar } = props
@@ -14,28 +14,7 @@ const CarCreate = (props) => {
             </nav>
             <div className="information" style={{ width: "60%", margin: "0 auto" }}>
                 <form action="" onSubmit={addCar}>
-                    <div className='mb-3'>
-                        <label htmlFor="brand" className='form-label text-white fw-bold' >Brand</label>
-                        <input type="text" className='form-control' required placeholder='Enter Brand' onChange={(e) => { setBrand(e.target.value) }} />
-                    </div>
-                    <div className='mb-3'>
-                        <label htmlFor="name" className='form-label text-white fw-bold'>Name</label>
-                        <input type="text" className='form-control' required placeholder='Enter Name' onChange={(e) => { setName(e.target.value) }} />
-                    </div>
-                    <div className='mb-3'>
-                        <label htmlFor="year" className='form-label text-white fw-bold'>Year</label>
-                        <input type="number" className='form-control' max="2023" required placeholder='Enter Year' onChange={(e) => { setYear(e.target.value) }} />
-                    </div>
-                    <div className='mb-3'>
-                        <label htmlFor="cost" className='form-label text-white fw-bold'>Cost</label>
-                        <input type="number" className='form-control' required placeholder='Enter Cost' onChange={(e) => { setCost(e.target.value) }} />
-                    </div>
-                    <div className='mb-3 d-flex wrapper-btn' >
-                        <NavLink to="/">
-                            <button className='btn btn-danger'>Cancle</button>
-                        </NavLink>
-                        <button className='btn btn-success' >Add Car</button>
-                    </div>
+                    <Formdata setBrand={setBrand} setName={setName} setYear={setYear} setCost={setCost} />
                 </form>
             </div>
         </div>
