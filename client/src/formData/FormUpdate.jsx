@@ -2,41 +2,32 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { DataBrand } from './DataBrand/DataBrand'
 import { DataYear } from "./DataBrand/DataYear"
-import { NavLink, useParams } from 'react-router-dom'
-const Formdata = ({ setBrand, setName, setYear, setCost }) => {
+import Axios from 'axios'
+const FormUpdatedata = ({ setBrand, setName, setYear, setCost }) => {
 
     const [Gen, setGen] = useState([])
-    const { id } = useParams()
 
 
-    const readDate = () => {
-        Axios.get("http://localhost:3002/read/" + id)
-            .then((res) => {
-                setReadData((res.data))
-            })
-    }
 
-    useEffect(() => {
-        readDate();
-    })
 
 
     const hangleChangeValue = (e) => {
         setBrand(e.target.value)
         setGen(DataBrand.find(brn => brn.name === e.target.value).Gen)
-
     }
 
     return (
         <>
             <div className="mb-3">
-                <label htmlFor="brand" className='form-label text-white fw-bold' >Brand</label>
-                <select id="cars" className='form-select' aria-label="Default select  " required
-                    onChange={hangleChangeValue} >
-                    <option selected value='' disabled label='Brand' ></option>
+                <label htmlFor="brand" className='form-label text-white fw-bold' >Change Brand</label>
+                <select id="cars" className='form-select' aria-label="Default select  " required 
+                    onClick={hangleChangeValue}  >
+                   <option value="" key={1}  disabled defaultValue='BRAND' selected  label="--Brand--"></option>
                     {DataBrand.map((val, i) => {
                         return (
-                            <option key={i} value={val.name} >{val.name}</option>
+                            <>
+                                <option key={i} value={val.name} >{val.name}</option>
+                            </>
                         )
                     })}
 
@@ -44,21 +35,23 @@ const Formdata = ({ setBrand, setName, setYear, setCost }) => {
             </div>
 
             <div className="mb-3">
-                <label htmlFor="name" className='form-label text-white fw-bold'>Name</label>
-                <select id="cars" className='form-select' aria-label="Default select  " required onChange={(e) => { setName(e.target.value) }}>
-                    <option selected value='' label='Name' disabled></option>
+                <label htmlFor="name" className='form-label text-white fw-bold'>Change Name</label>
+                <select id="cars" className='form-select' aria-label="Default select  " required
+                    onClick={(e) => { setName(e.target.value) }}>
+                          <option value=""  key={1}  selected   disabled label="--Name--"></option>
                     {Gen.map((val, i) => {
                         return (
-                            <option key={i} value={val.name} >{val.name}</option>
+                            <option key={i} value={val.name}  >{val.name}</option>
                         )
                     })}
                 </select>
             </div>
 
             <div className="mb-3">
-                <label htmlFor="year" className='form-label text-white fw-bold'>Year</label>
-                <select id="cars" className='form-select' aria-label="Default select " required onChange={(e) => { setYear(e.target.value) }}>
-                    <option selected value=''>Year</option>
+                <label htmlFor="year" className='form-label text-white fw-bold'>Change Year</label>
+                <select id="cars" className='form-select' aria-label="Default select " required
+                    onClick={(e) => { setYear(e.target.value) }}>
+                    <option value="" selected key={1}  disabled  label="--Year--"></option>
                     {DataYear.map((val, i) => {
                         return (
                             <option key={i} value={val.year} >{val.year}</option>
@@ -67,8 +60,9 @@ const Formdata = ({ setBrand, setName, setYear, setCost }) => {
                 </select>
             </div>
             <div className='mb-3'>
-                <label htmlFor="cost" className='form-label text-white fw-bold'>Cost</label>
-                <input type="number" className='form-control' required placeholder='Enter Cost' onChange={(e) => { setCost(e.target.value) }} />
+                <label htmlFor="cost" className='form-label text-white fw-bold'>Change Cost</label>
+                <input type="number" className='form-control' required placeholder='Enter Cost'
+                    onChange={(e) => { setCost(e.target.value) }} />
             </div>
 
 
@@ -76,7 +70,7 @@ const Formdata = ({ setBrand, setName, setYear, setCost }) => {
                 <NavLink to="/">
                     <button className='btn btn-danger'>Cancle</button>
                 </NavLink>
-                <button className='btn btn-success' >Add Car</button>
+                <button className='btn btn-success'   >Update Car</button>
             </div>
         </>
     )
@@ -86,7 +80,7 @@ const Formdata = ({ setBrand, setName, setYear, setCost }) => {
 
 }
 
-export default Formdata
+export default FormUpdatedata
 
 
 

@@ -1,16 +1,10 @@
-import React, { useState } from 'react'
 import './Update.css'
 import { useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
-import Formdata from '../../formData/Formdata'
-const Update = () => {
+import FormUpdatedata from '../../formData/FormUpdate'
+const Update = ({ brand, name, year, cost,  setBrand, setName, setYear, setCost }) => {
     const { id } = useParams()
-
-    const [brand, setBrand] = useState("");
-    const [name, setName] = useState("");
-    const [year, setYear] = useState("");
-    const [cost, setCost] = useState(0);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -49,7 +43,7 @@ const Update = () => {
             </nav>
             <div className="informationUpdate" style={{ width: "60%", margin: "0 auto" }}>
                 <form action="" onSubmit={handleSubmit}>
-                    <Formdata setBrand={setBrand} setName={setName} setYear={setYear} setCost={setCost} />
+                    <FormUpdatedata setBrand={setBrand} setName={setName} setYear={setYear} setCost={setCost} />
                 </form>
             </div>
         </div>

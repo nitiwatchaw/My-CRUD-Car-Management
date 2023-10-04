@@ -63,9 +63,8 @@ const Table = (props) => {
     }
   }
 
-  function changeCPage(id) {
-    setCurrentPage(id)
-    id.preventDefault();
+  function changeCPage(e) {
+    setCurrentPage(e)
   }
 
   const nextPage = (e) => {

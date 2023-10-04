@@ -10,7 +10,7 @@ const Read = () => {
     const options = { maximumFractionDigits: 2 }
     const [readData, setReadData] = useState([])
 
-    const readDate = () => {
+    const GetData = () => {
         Axios.get("http://localhost:3002/read/" + id)
             .then((res) => {
                 setReadData((res.data))
@@ -18,7 +18,7 @@ const Read = () => {
     }
 
     useEffect(() => {
-        readDate();
+        GetData();
     })
 
     return (

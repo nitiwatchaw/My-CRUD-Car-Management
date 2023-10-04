@@ -57,7 +57,7 @@ export const DataBrand = [
                 name: 'C250e'
             },
             {
-                name: 'C300f'
+                name: 'C300d'
             },
             {
                 name: 'E300e'
