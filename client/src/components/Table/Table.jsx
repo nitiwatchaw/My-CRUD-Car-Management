@@ -22,7 +22,7 @@ const Table = (props) => {
   const [disablebtnRight, setDisablebtnRight] = useState(false)
 
 
-  //format number F
+  //format number 
   const options = { maximumFractionDigits: 2 }
 
   const CarUpdate = (id) => {
@@ -88,7 +88,7 @@ const Table = (props) => {
 
         <div className='wrap-table'>
 
-          <input type="search" placeholder='serach brand (lowercase)' className='form-control' onChange={(e) => setQuery(e.target.value)} />
+          <input type="search" placeholder='Search Brand' className='form-control' onChange={(e) => setQuery(e.target.value)} />
 
           <table className="table table-hover text-center ">
             <thead>
