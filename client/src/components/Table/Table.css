@@ -302,4 +302,7 @@
     .table tbody tr {
         vertical-align: text-top;
     }
+    .paginationui{
+        gap: 15px;
+    }
 }
