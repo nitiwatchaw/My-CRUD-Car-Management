@@ -75,6 +75,7 @@ const Table = (props) => {
   }
 
 
+
   return (
     <div className='sec-table'>
       {loading
@@ -90,6 +91,8 @@ const Table = (props) => {
 
           <input type="search" placeholder='Search Brand' className='form-control' onChange={(e) => setQuery(e.target.value)} />
 
+
+
           <table className="table table-hover text-center ">
             <thead>
               <tr className='text-white'>
@@ -103,7 +106,7 @@ const Table = (props) => {
               </tr>
             </thead>
             <tbody >
-              {records.filter(val => val.brand.toLowerCase().includes(query)).map((val, index) => {
+              {records.filter(val => val.brand.toLowerCase().includes(query.toLowerCase())).map((val, index) => {
                 return (
                   <tr key={index} className=' fw-bold'>
                     <th scope="row">{val.id}</th>
@@ -137,7 +140,6 @@ const Table = (props) => {
                     <li className={`page-item ${currentPage === n ? 'active' : ''}`} key={i}>
                       <a href="#" className='page-link' onClick={() => changeCPage(n)} >{n}</a>
                     </li>
-
                   ))
                 }
               </div>
