@@ -74,7 +74,6 @@ const FormUpdatedata = ({ setBrand, setName, setYear, setCost }) => {
                 <select id="cars" className='form-select' aria-label="Default select  " required ref={selectRefName}
                     onClick={(e) => { setName(e.target.value) }}>
 
-
                     {Gen.map((val, i) => {
                         return (
                             <option key={i} value={val.name} selected >{val.name}</option>
