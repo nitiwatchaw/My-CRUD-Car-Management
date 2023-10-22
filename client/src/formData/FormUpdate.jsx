@@ -62,7 +62,7 @@ const FormUpdatedata = ({ setBrand, setName, setYear, setCost }) => {
                         return (
                             
                                 <option key={i} value={val.name} >{val.name}</option>
-                            
+    
                         )
                     })}
 
